@@ -1,0 +1,14 @@
+{
+    "worldPainter": {
+        "text.fileNameLabel": "File Name:",
+        "text.tileSheetPathLabel": "Tile Sheet Path: ",
+        "text.advancedSettingCheckBox": "Advanced Settings",
+        "text.createWorldButton": "Create World!",
+        "text.errorMessageLabel": "World Created!",
+        "warn.errorMessageLabel.0": "Name cant be blank.",
+        "warn.errorMessageLabel.1": "File already exists.",
+        "warn.errorMessageLabel.2": "Invalid Name: < > : \" / \\ | ? * Or CON, PRN, AUX, NUL, COM[1-9], LPT[1-9]",
+        "text.newWorldButton": "New World",
+        "text.editWorldButton": "Edit World"
+    }
+}
