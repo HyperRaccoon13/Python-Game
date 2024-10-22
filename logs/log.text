@@ -16,3 +16,21 @@
 [2024-10-22 07:22:44] [Asset Manager] [INFO] Logging Asset Manager
 [2024-10-22 07:22:44] [Lang Manager] [INFO] Logging Lang Manager
 [2024-10-22 07:22:44] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:24:19] [Asset Manager] [INFO] Logging Asset Manager
+[2024-10-22 07:24:19] [Lang Manager] [INFO] Logging Lang Manager
+[2024-10-22 07:24:19] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:24:22] [WorldPainter] [INFO] Getting worlds: ['e.txt']
+[2024-10-22 07:24:36] [Asset Manager] [INFO] Logging Asset Manager
+[2024-10-22 07:24:36] [Lang Manager] [INFO] Logging Lang Manager
+[2024-10-22 07:24:36] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:27:39] [Asset Manager] [INFO] Logging Asset Manager
+[2024-10-22 07:27:39] [Lang Manager] [INFO] Logging Lang Manager
+[2024-10-22 07:27:39] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:27:41] [WorldPainter] [INFO] Getting worlds: ['e.txt']
+[2024-10-22 07:30:58] [WorldPainter] [WARN] Attempted to make world that already exists.
+[2024-10-22 07:31:00] [WorldPainter] [INFO] Created World: ee, with default settings
+[2024-10-22 07:38:45] [Lang Manager] [INFO] Logging Lang Manager
+[2024-10-22 07:40:13] [Lang Manager] [INFO] Logging Lang Manager
+[2024-10-22 07:45:46] [Asset Manager] [INFO] Logging Asset Manager
+[2024-10-22 07:45:46] [Lang Manager] [INFO] Logging Lang Manager
+[2024-10-22 07:45:46] [WorldPainter] [INFO] Logging WorldPainter

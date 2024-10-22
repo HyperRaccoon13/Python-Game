@@ -1,0 +1,1 @@
+(Settings:(tileSet:assets/world/tileSet.png, sizeX:100, sizeY:100, cellSize:16))

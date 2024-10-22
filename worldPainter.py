@@ -49,6 +49,7 @@ def GetSettingsFromWorld(world):
 class NewWorldPannel(customtkinter.CTkToplevel):
     def __init__(self, parent):
         super().__init__(parent)
+        self.title(langManager.GetLangkey("title.NewWorldPannel"))
     
         self.fileNameLabel = customtkinter.CTkLabel(self, text=langManager.GetLangkey("text.fileNameLabel"))
         self.fileNameLabel.grid(row=0, column=0, padx=5, pady=5)
@@ -119,7 +120,7 @@ class NewWorldPannel(customtkinter.CTkToplevel):
 class EditWorldPannel(customtkinter.CTkToplevel):
     def __init__(self, parent):
         super().__init__(parent)
-
+        self.title(langManager.GetLangkey("title.EditWorldPannel"))
 
         self.worldSelectionDefaultText = customtkinter.StringVar(value="Select a World")
         self.worldSelectionOptionMenu = customtkinter.CTkOptionMenu(self, variable=self.worldSelectionDefaultText, values=GetWorlds(), command=self.UpdateButton)
@@ -162,6 +163,7 @@ class PropertiesFrame(customtkinter.CTkScrollableFrame):
 class WorldPainter(customtkinter.CTk):
     def __init__(self):
         super().__init__()
+        self.title(langManager.GetLangkey("title.worldPainter"))
         self.geometry(f"{screenX}x{screenY}")
 
 

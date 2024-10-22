@@ -1,5 +1,8 @@
 {
     "worldPainter": {
+        "title.worldPainter": "World Painter",
+        "title.NewWorldPannel": "New World Creator",
+        "title.EditWorldPannel": "Edit World",
         "text.fileNameLabel": "File Name:",
         "text.tileSheetPathLabel": "Tile Sheet Path: ",
         "text.advancedSettingCheckBox": "Advanced Settings",

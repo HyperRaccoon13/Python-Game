@@ -3,20 +3,20 @@ import os
 
 class Logger():
     LEVELS = {
-        "DEBUG": 0, 
+        "DEBUG": 0,
         "INFO": 1,
-        "WARN": 2,
+        "WARNING": 2,
         "ERROR": 3,
         "FATAL": 4
     }
     
     COLORS = {
         "RESET": "\033[0m",
-        "DEBUG": "\033[94m", #Green
-        "INFO":  "\033[92m", #Blue
-        "WARN":  "\033[93m", #Yello
-        "ERROR": "\033[91m", #Red
-        "FATAL": "\033[41m"  #Red Background
+        "DEBUG": "\033[94m",   # Blue
+        "INFO": "\033[97m",    # White
+        "WARNING": "\033[93m", # Yellow
+        "ERROR": "\033[91m",   # Red
+        "FATAL": "\033[41m"    # Red Background
     }
 
     def __init__(self, name, level="INFO", logFile=None, enabled=False):
@@ -27,7 +27,6 @@ class Logger():
 
         if logFile:
             os.makedirs(os.path.dirname(logFile), exist_ok=True)
-
 
     def log(self, message, level="INFO"):
         if not self.enabled:
@@ -44,7 +43,7 @@ class Logger():
             if self.logFile:
                 with open(self.logFile, "a") as file:
                     file.write(outputLogMessage + "\n")
-
+    
     def debug(self, message):
         self.log(message, level="DEBUG")
 
@@ -52,7 +51,7 @@ class Logger():
         self.log(message, level="INFO")
 
     def warn(self, message):
-        self.log(message, level="WARN")
+        self.log(message, level="WARNING")
 
     def error(self, message):
         self.log(message, level="ERROR")
