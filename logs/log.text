@@ -1,1 +1,18 @@
-[2024-10-22 06:00:46] [WorldPainter] [INFO] test
+[2024-10-22 07:19:08] [WorldPainter] [INFO] Logging Asset Manager
+[2024-10-22 07:19:08] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:19:35] [WorldPainter] [INFO] Logging Asset Manager
+[2024-10-22 07:19:35] [WorldPainter] [INFO] Logging Lang Manager
+[2024-10-22 07:19:35] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:20:36] [WorldPainter] [INFO] Logging Asset Manager
+[2024-10-22 07:20:36] [WorldPainter] [INFO] Logging Lang Manager
+[2024-10-22 07:20:36] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:20:46] [WorldPainter] [INFO] Logging Asset Manager
+[2024-10-22 07:20:46] [WorldPainter] [INFO] Logging Lang Manager
+[2024-10-22 07:20:46] [WorldPainter] [ERROR] JSON decoding failed. Please check the config file.
+[2024-10-22 07:20:46] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:21:46] [WorldPainter] [INFO] Logging Asset Manager
+[2024-10-22 07:21:46] [WorldPainter] [INFO] Logging Lang Manager
+[2024-10-22 07:21:46] [WorldPainter] [INFO] Logging WorldPainter
+[2024-10-22 07:22:44] [Asset Manager] [INFO] Logging Asset Manager
+[2024-10-22 07:22:44] [Lang Manager] [INFO] Logging Lang Manager
+[2024-10-22 07:22:44] [WorldPainter] [INFO] Logging WorldPainter

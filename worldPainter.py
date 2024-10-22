@@ -9,7 +9,9 @@ screenY = 1080
 
 
 def GetWorlds():
-    return [file for file in os.listdir(configManager.GetConfigValues("worldPath")) if file.endswith(".txt")]
+    worlds = [file for file in os.listdir(configManager.GetConfigValues("worldPath")) if file.endswith(".txt")]
+    logger.log(f"Getting worlds: {worlds}")
+    return worlds
 
 def CheckVaildPath(filename):
     invalidCharPattern = r'[<>:"/\\|?*]'
@@ -83,29 +85,36 @@ class NewWorldPannel(customtkinter.CTkToplevel):
     def CreateWorldButtonCallBack(self):
         fileNameInput = self.fileNameTextbox.get("0.0", "end").strip()
         tileSheetInput = self.tileSheetPathTextBox.get("0.0", "end").strip()
-        worldFilePath = f"{configManager.GetConfigValues('worldPath')}/{fileNameInput}"
+        worldFilePath = f"{configManager.GetConfigValues('worldPath')}/{fileNameInput}.txt"
 
 
         if CheckVaildPath(fileNameInput) and CheckVaildPath(tileSheetInput) and not os.path.exists(worldFilePath):
             self.errorMessageLabel.configure(text=langManager.GetLangkey("text.errorMessageLabel"), text_color="white")
-            with open(worldFilePath+".txt", "w") as file:
+            with open(worldFilePath, "w") as file:
 
                 if self.advancedSettingDefaultValue.get() == "1":
                     advancedSettingsInput = self.advancedSettingTextBox.get("0.0", "end").strip()
                     file.write(advancedSettingsInput)
+                    logger.log(f"Created World: {fileNameInput}, with custom settings: {advancedSettingsInput}")
 
                 elif tileSheetInput == "" or None:
                     file.write("(Settings:(tileSet:assets/world/tileSet.png, sizeX:100, sizeY:100, cellSize:16))")
+                    logger.log(f"Created World: {fileNameInput}, with default settings")
                 else:
                     file.write(f"(Settings:(tileSet:{tileSheetInput}, sizeX:100, sizeY:100, cellSize:16))")
+                    logger.log(f"Created World: {fileNameInput}, with custom tile sheet: {tileSheetInput}")
 
         elif fileNameInput == "" or None:
             self.errorMessageLabel.configure(text=langManager.GetLangkey("warn.errorMessageLabel.0"))
+            logger.warn(f"Attempted to make world with no name.")
 
         elif os.path.exists(worldFilePath):
-            self.errorMessageLabel.configure(text=langManager.GetLangkey("warn.errorMessageLabel.2"))
+            self.errorMessageLabel.configure(text=langManager.GetLangkey("warn.errorMessageLabel.1"))
+            logger.warn(f"Attempted to make world that already exists.")
+
         else: 
-            self.errorMessageLabel.configure(text=langManager.GetLangkey("warn.errorMessageLabel.3"))
+            self.errorMessageLabel.configure(text=langManager.GetLangkey("warn.errorMessageLabel.2"))
+            logger.warn(f"Attempted to make world using invaild chars: {langManager.GetLangkey('warn.errorMessageLabel.2')}")
 
 class EditWorldPannel(customtkinter.CTkToplevel):
     def __init__(self, parent):
@@ -171,8 +180,9 @@ class WorldPainter(customtkinter.CTk):
 configManager = ConfigManager("config.json")
 assetManager = AssetManager(configManager.GetConfigValues("assetsPath"))
 langManager = LangManager(configManager.GetConfigValues("langPath"), "worldPainter")
-logger = Logger("WorldPainter", logFile=configManager.GetConfigValues("logPath") + "/log.text")
+logger = Logger("WorldPainter", logFile=configManager.GetConfigValues("logPath") + "/log.text", enabled=configManager.GetConfigValues("outputLog"))
 
+logger.info("Logging WorldPainter")
 
 WorldPainter = WorldPainter()
 WorldPainter.mainloop()

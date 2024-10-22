@@ -1,6 +1,9 @@
 from PIL import Image
 import os
 
+from .ConfigManager import ConfigManager
+from .Logger import Logger
+
 class AssetManager():
     def __init__(self, assetDirectory):
         self.assetDirectory = assetDirectory
@@ -22,13 +25,17 @@ class AssetManager():
         for name, path in self.assetDictionary.items():
             try:
                 if not os.path.exists(path):
-                    print(f"Warning: File not found at {path}")
+                    logger.warn(f"File not found at {path}")
                     continue
                 image = Image.open(path)
                 self.loadedAssets[name] = image
             except Exception as e:
-                print(f"Failed to load image at {path}. Error: {e}")
+                logger.error(f"Failed to load image at {path}. Error: {e}")
 
 
     def GetAsset(self, name):
         return self.loadedAssets.get(name)
+    
+configManager = ConfigManager("config.json")
+logger = Logger("Asset Manager", logFile=configManager.GetConfigValues("logPath") + "/log.text", enabled=configManager.GetConfigValues("outputLog"))
+logger.info("Logging Asset Manager") 
