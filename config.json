@@ -1,5 +1,6 @@
 {
     "worldPath": "worlds",
     "assetsPath": "assets",
-    "langPath": "en_us.json"
+    "langPath": "en_us.json",
+    "logPath": "logs"
 }

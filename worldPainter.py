@@ -2,7 +2,7 @@ import pygame
 import customtkinter
 import os
 import re
-from managers import ConfigManager, AssetManager, LangManager
+from managers import ConfigManager, AssetManager, LangManager, Logger
 
 screenX = 1920
 screenY = 1080
@@ -171,6 +171,8 @@ class WorldPainter(customtkinter.CTk):
 configManager = ConfigManager("config.json")
 assetManager = AssetManager(configManager.GetConfigValues("assetsPath"))
 langManager = LangManager(configManager.GetConfigValues("langPath"), "worldPainter")
+logger = Logger("WorldPainter", logFile=configManager.GetConfigValues("logPath") + "/log.text")
+
 
 WorldPainter = WorldPainter()
 WorldPainter.mainloop()
